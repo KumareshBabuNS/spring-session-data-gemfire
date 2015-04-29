@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportAware;
 import org.springframework.core.type.AnnotationMetadata;
-import org.springframework.data.gemfire.repository.config.EnableGemfireRepositories;
 import org.springframework.session.ExpiringSession;
 import org.springframework.session.SessionRepository;
 import org.springframework.session.data.gemfire.GemfireRepository;

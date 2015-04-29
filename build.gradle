@@ -11,10 +11,19 @@ version = '1.0.0-SNAPSHOT'
 buildscript {
 	repositories {
 		maven { url "https://repo.spring.io/plugins-release" }
+		mavenCentral()
 	}
-	
+	ext {
+		springBootVersion = '1.2.3.RELEASE'
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("io.spring.gradle:dependency-management-plugin:0.5.0.RELEASE")
+	}
 }
 
+apply plugin: 'spring-boot'
+apply plugin: 'io.spring.dependency-management'
 
 repositories {
 	mavenLocal()
@@ -25,8 +34,14 @@ repositories {
 
 
 dependencies {
-	compile 'org.springframework.session:spring-session:1.0.1.BUILD-SNAPSHOT'
-	compile 'org.springframework.data:spring-data-gemfire:1.6.0.M1'
+	compile 'org.springframework.boot:spring-boot-starter-data-gemfire'
+	compile 'org.springframework.session:spring-session:1.0.1.RELEASE'
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	compile 'org.springframework.boot:spring-boot-starter-groovy-templates'
+	compile 'com.gemstone.gemfire:gemfire:8.1.0'
+	runtime 'org.webjars:bootstrap:3.3.1'
+	
+	//compile 'org.springframework.data:spring-data-gemfire:1.6.0.RELEASE'
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 

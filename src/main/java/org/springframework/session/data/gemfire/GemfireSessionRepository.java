@@ -70,6 +70,7 @@ public class GemfireSessionRepository implements
 			return id;
 		}
 
+		@SuppressWarnings("unchecked")
 		public Object getAttribute(String attributeName) {
 			return attributes.get(attributeName);
 		}

@@ -1,17 +1,18 @@
-package org.springframework.session.data.gemfire.config.annotation.web.http;
+package org.springframework.example;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.gemfire.CacheFactoryBean;
 import org.springframework.data.gemfire.LocalRegionFactoryBean;
 import org.springframework.session.data.gemfire.GemfireSessionRepository;
+import org.springframework.session.data.gemfire.config.annotation.web.http.EnableGemfireHttpSession;
 
 import com.gemstone.gemfire.cache.GemFireCache;
 
 @Configuration
 @EnableGemfireHttpSession
-public class GemfireLocalConfig {
-
+public class SessionConfig {
+	
 	@Bean
     CacheFactoryBean cacheFactoryBean() {
         return new CacheFactoryBean();
@@ -28,5 +29,4 @@ public class GemfireLocalConfig {
             }
         };
     }
-	
 }
